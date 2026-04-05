@@ -14,7 +14,7 @@ if horap:
 
         hora_maxima = timedelta(hours=2, minutes=0)
         hora_extra = hora_final + hora_maxima
-        st.write("Com hora extra :", hora_extra.strftime("%H:%M"))
+        st.write("Com hora extra maxima (2 HORAS MAXIMA):", hora_extra.strftime("%H:%M"))
     except ValueError:
         st.error("Por favor, insira o horário no formato correto HH:MM.")
 else:
