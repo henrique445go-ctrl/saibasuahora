@@ -20,5 +20,5 @@ if horap:
 else:
     st.info("Por favor, insira o horário para calcular a saída.")
 
-    with open ("base_de_dados", "a") as arquivo:
+with open ("base_de_dados", "a") as arquivo:
     arquivo.write (f" LOGIN :{horap}, \n" )
