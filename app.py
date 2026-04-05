@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 
 st.title("Saiba sua hora:")
 
-horap = st.text_input("Que horas você entrou? (formato HH:MM)")
+horap = st.text_input("Que horas você entrou?")
 
 if horap:
     try:
@@ -14,7 +14,7 @@ if horap:
 
         hora_maxima = timedelta(hours=2, minutes=0)
         hora_extra = hora_final + hora_maxima
-        st.write("Seu horário máximo final com hora extra é:", hora_extra.strftime("%H:%M"))
+        st.write("Com hora extra :", hora_extra.strftime("%H:%M"))
     except ValueError:
         st.error("Por favor, insira o horário no formato correto HH:MM.")
 else:
