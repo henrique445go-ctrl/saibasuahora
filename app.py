@@ -15,10 +15,12 @@ if horap:
         hora_maxima = timedelta(hours=2, minutes=0)
         hora_extra = hora_final + hora_maxima
         st.write("Com hora extra (2 HORAS MAXIMA):", hora_extra.strftime("%H:%M"))
+
+        # Gravação no arquivo somente após validação
+        with open("base_de_dados", "a") as arquivo:
+            arquivo.write(f"LOGIN: {horap}, Saída: {hora_final.strftime('%H:%M')}, Hora extra máxima: {hora_extra.strftime('%H:%M')}\n")
+
     except ValueError:
         st.error("Por favor, insira o horário no formato correto HH:MM.")
 else:
     st.info("Por favor, insira o horário para calcular a saída.")
-
-with open ("base_de_dados", "a") as arquivo:
-    arquivo.write (f" LOGIN :{horap}, \n" )
